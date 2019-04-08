@@ -26,10 +26,10 @@ public class CoursesFactory {
 //        return null;
 //    }
 
-    public ICourses create(Class clazz){
+    public ICourses create(Class<? extends ICourses> clazz){
         try{
             if(null != clazz ){
-                return (ICourses) clazz.newInstance();
+                return clazz.newInstance();
             }else
                 return null;
         }catch (Exception e){
